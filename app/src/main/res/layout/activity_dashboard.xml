@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGreenBackground"
+    tools:context=".Activities.Dashboard">
+
+    <ImageView
+        android:id="@+id/imgDashBack"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_dashboards"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listNav"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/imgDashBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/textWalletDispDash"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/listNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Wallet Balance"
+        android:textSize="14sp"
+        android:fontFamily="@font/googlesans"/>
+
+    <TextView
+        android:id="@+id/textWalletBalDash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textWalletDispDash"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/googlesans"
+        android:text="Your Wallet Balance"
+        android:textSize="18sp" />
+
+</RelativeLayout>

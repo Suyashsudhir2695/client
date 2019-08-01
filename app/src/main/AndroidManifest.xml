@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.change.foodorder">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Activities.TrackOrders"
+            android:label="@string/title_activity_track_orders"></activity>
+        <activity
+            android:name=".Activities.Dashboard"
+            android:theme="@style/activityFingerprint" />
+        <activity
+            android:name=".Activities.WelcomeActivity"
+            android:theme="@style/activityFingerprint">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.FingerprintAuth"
+            android:theme="@style/activityFingerprint" />
+        <activity android:name=".Activities.PhoneVerification" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:theme="@style/activityFingerprint" />
+        <activity
+            android:name=".Activities.SignIn"
+            android:theme="@style/activityFingerprint" />
+        <activity android:name=".Activities.SignUp" />
+        <activity
+            android:name=".Activities.Home"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.FoodList" />
+        <activity android:name=".Activities.FoodDetails" />
+        <activity android:name=".Activities.Cart" />
+        <activity android:name=".Activities.OrderStatus" />
+
+        <service android:name=".Services.FirebaseService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Services.FBService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Activities.Comments" />
+        <activity android:name=".Activities.Settings" />
+        <activity android:name=".Activities.FavoritesActivity" />
+        <activity android:name=".Activities.Complaints" />
+        <activity android:name=".Activities.NewComplaint" />
+        <activity android:name=".Activities.Wallet" />
+    </application>
+
+</manifest>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="1dp"
+                android:layout_toLeftOf="@id/tvTitleOrderConfirm"
+                android:src="@drawable/checkout" />
+
+            <TextView
+                android:id="@+id/tvTitleOrderConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/googlesans"
+                android:text="Checkout"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimary"/>
+
+        <fragment
+            android:id="@+id/place_autocomplete_fragment"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/editCommentComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/googlesans"
+            android:hint="Other Details Related to Order"
+            android:inputType="textMultiLine"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:met_baseColor="@color/colorPrimary"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/colorPrimary"
+
+            app:met_singleLineEllipsis="true" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/googlesans"
+            android:text="Choose An Address Type"/>
+
+        <Spinner
+            android:id="@+id/spinnerAddressDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:dropDownWidth="wrap_content"
+            android:entries="@array/items_address"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/googlesans"
+            android:text="Choose A Payment Type"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerPaymentDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:dropDownWidth="wrap_content"
+            android:entries="@array/items_payment"
+            android:spinnerMode="dropdown"
+            />
+
+
+
+        <TextView
+            android:id="@+id/txtOrderLayoutBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="7dp"
+            android:fontFamily="@font/googlesans"
+            android:text="Wallet Balance: 500"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtOrderLayoutInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/googlesans"
+            android:text="Wallet Balance: 500"
+            android:textSize="18sp" />
+        <Button
+            android:layout_marginTop="15dp"
+            android:id="@+id/btnOrderConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/googlesans"
+            android:background="@drawable/btn_wallet_add_bg"
+            android:textColor="@color/white"
+            android:text="Continue"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
